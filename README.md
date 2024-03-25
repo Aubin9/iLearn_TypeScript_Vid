@@ -37,3 +37,12 @@
 - Functions
   enable "noUnusedLocals", "noUnusedParameters", "noImplicitReturns"
 - Objects
+
+## Advanced types in typescript
+
+- Types a liases: (used to reuse types and simplify your code)
+- Unions and intersections: (to combine types)
+- type narrowing
+- Nullable types
+- The unknowns type
+- The never type
