@@ -27,3 +27,13 @@
   run the code line by line enable "sourceMap": true,
   go to the debug panel of vscode, and click on "create a launch.json file and select node.js
   add the property "preLaunchTask": "tsc: build - tsconfig.json"
+
+## Fundamentals of typescript
+
+- The any, unknown, never, enum, tuple Types
+- Arrays
+- Tuples
+- Enums
+- Functions
+  enable "noUnusedLocals", "noUnusedParameters", "noImplicitReturns"
+- Objects
