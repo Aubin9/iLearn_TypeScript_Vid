@@ -46,3 +46,19 @@
 - Nullable types
 - The unknowns type
 - The never type
+
+## classes, interfaces and OOP
+
+- Introduction to OOP:
+  Object is a unit which contains some data(also called state)-> properties and operation (also called behavior)-> Methods
+- Classes
+- Constructors
+- Properties and methods
+- Access control keywords- access modifiers: public, private, protected
+- Getters and setters
+- static members
+- index signatures (create dynamic properties)
+- Inheritance: extends, super
+- Polymorphism:
+- Abstract classes: abstract
+- Interfaces

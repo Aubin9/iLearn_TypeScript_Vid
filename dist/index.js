@@ -66,11 +66,147 @@ let speed = null;
 let ride = {
     speed: speed !== null && speed !== void 0 ? speed : 30,
 };
-let phone = document.getElementById("phone");
-phone.value;
 function processEvents() {
     while (true) {
     }
 }
 console.log("Hello World!");
+class Account {
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.balance = balance;
+        this.owner = owner;
+    }
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error("Invalid amount");
+        this.balance += amount;
+    }
+}
+let account = new Account(1, "Aubin", 0);
+account.deposit(100);
+console.log(account.balance);
+console.log(account);
+console.log(account instanceof Account);
+class Account1 {
+    constructor(id, owner, _balance) {
+        this.id = id;
+        this._balance = _balance;
+        this.owner = owner;
+    }
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error("Invalid amount");
+        this._balance += amount;
+    }
+    getBalance() {
+        return this._balance;
+    }
+}
+let account1 = new Account1(1, "Aubin", 0);
+console.log(account1.getBalance());
+class Account2 {
+    constructor(id, owner, _balance) {
+        this.id = id;
+        this.owner = owner;
+        this._balance = _balance;
+    }
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error("Invalid amount");
+        this._balance += amount;
+    }
+    get balance() {
+        return this._balance;
+    }
+    set balance(value) {
+        if (value < 0)
+            throw new Error("Invalid value");
+        this._balance = value;
+    }
+}
+let account2 = new Account2(1, "Aubin", 0);
+console.log(account2.balance);
+account.balance = 100;
+class SeatAssignment {
+}
+let seats = new SeatAssignment();
+seats.A1 = "Aubin";
+seats.A2 = "Smith";
+class Ride {
+    constructor() {
+        this.activeRides = 0;
+    }
+    start() {
+        this.activeRides++;
+    }
+    stop() {
+        this.activeRides--;
+    }
+}
+let ride1 = new Ride();
+ride1.start();
+let ride2 = new Ride();
+ride2.start();
+console.log(ride1.activeRides);
+console.log(ride2.activeRides);
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    get fullName() {
+        return this.firstName + " " + this.lastName;
+    }
+    walk() {
+        console.log("Walking");
+    }
+}
+class Student extends Person {
+    constructor(studentId, firstName, lastName) {
+        super(firstName, lastName);
+        this.studentId = studentId;
+    }
+    takeTest() {
+        console.log("Taking a test");
+    }
+}
+let student = new Student(1, "John", "Smith");
+class Teacher extends Person {
+    get fullName() {
+        return "Professor " + super.fullName;
+    }
+}
+let teacher = new Teacher("Aubin", "SIAHA");
+console.log(teacher.fullName);
+printNames([new Student(1, "John", "Smith"), new Teacher("Aubin", "SIAHA")]);
+function printNames(people) {
+    for (let person of people)
+        console.log(person.fullName);
+}
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Circle extends Shape {
+    constructor(radius, color) {
+        super(color);
+        this.radius = radius;
+    }
+    render() {
+        console.log("Rebdering a circle");
+    }
+}
+class GoogleCalendar {
+    constructor(name) {
+        this.name = name;
+    }
+    addEvent() {
+        throw new Error("Method not implemented.");
+    }
+    removeEvent() {
+        throw new Error("Method not implemented.");
+    }
+}
 //# sourceMappingURL=index.js.map
