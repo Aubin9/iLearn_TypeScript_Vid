@@ -62,3 +62,13 @@
 - Polymorphism:
 - Abstract classes: abstract
 - Interfaces
+
+## Generics:
+
+we use this when we want to allow value of any types in .ts
+
+- Generic classes
+- Generic functions
+- Generic interfaces
+- Generic constraints
+- Type mapping

@@ -352,3 +352,102 @@ class GoogleCalendar implements ICalendar {
     throw new Error("Method not implemented.");
   }
 }
+
+// GENERICS
+// Generic classes
+class KeyValuePair<T> {
+  //angular braquet is the generic attr
+  constructor(public key: T, public value: string) {}
+}
+let pair = new KeyValuePair<number>(1, "a");
+let pair1 = new KeyValuePair<string>("1", "a");
+
+// Generic functions or methods
+function wrapInArray<T>(value: T) {
+  return [value];
+}
+let numbers1 = wrapInArray("1");
+let numbers2 = wrapInArray(1);
+
+// Generic interfaces
+interface Result<T> {
+  data: T | null;
+  error: string | null;
+}
+function fetch<T>(url: string): Result<T> {
+  url = url;
+  return { data: null, error: null };
+}
+
+interface User {
+  username: string;
+}
+interface Product {
+  title: string;
+}
+
+let result = fetch<User>("url");
+// result.data.
+
+// Generic constraints
+function echo<T extends number | string>(value: T): T {
+  return value;
+}
+echo(1);
+
+// extending generic classes
+interface Product1 {
+  name: string;
+  price: number;
+}
+class Store<T> {
+  protected _objects: T[] = [];
+
+  add(obj: T): void {
+    this._objects.push(obj);
+  }
+
+  // keyof
+  find(property: keyof T, value: unknown): T | undefined {
+    return this._objects.find((obj) => obj[property] === value);
+  }
+} /*
+// Pass on the generic type parameter
+class CompressibleStore<T> extends Store<T> {
+  compress() {}
+}
+let store = new CompressibleStore<Product1>();
+store.compress();
+
+// Try another scenario: Restrict the generic type parameter
+class SearchableStore<T extends { name: string }> extends Store<T> {
+  find(name: string): T | undefined {
+    return this._objects.find((obj) => obj.name === name);
+  }
+}
+
+// Fix or terminating the generic type parameter
+class ProductStore extends Store<Product1> {
+  filterByCategory(category: string): Product1[] {
+    return [];
+  }
+  find(name: string): T | undefined {
+    return this._objects.find((obj) => obj.name === name);
+  }
+}*/
+let store1 = new Store<Product1>();
+store1.add({ name: "a", price: 1 });
+store1.find("name", "a");
+store1.find("price", 1);
+
+// The keyof operator look above
+
+// Type mapping
+// type ReadOnlyProduct = {
+//  readonly [K in keyof Product1]: Product1[K]
+// }
+//or
+type ReadOnly<T> = {
+  //we can replace T by Project1
+  readonly [K in keyof T]: T[K];
+};

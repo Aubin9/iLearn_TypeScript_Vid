@@ -209,4 +209,41 @@ class GoogleCalendar {
         throw new Error("Method not implemented.");
     }
 }
+class KeyValuePair {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+}
+let pair = new KeyValuePair(1, "a");
+let pair1 = new KeyValuePair("1", "a");
+function wrapInArray(value) {
+    return [value];
+}
+let numbers1 = wrapInArray("1");
+let numbers2 = wrapInArray(1);
+function fetch(url) {
+    url = url;
+    return { data: null, error: null };
+}
+let result = fetch("url");
+function echo(value) {
+    return value;
+}
+echo(1);
+class Store {
+    constructor() {
+        this._objects = [];
+    }
+    add(obj) {
+        this._objects.push(obj);
+    }
+    find(property, value) {
+        return this._objects.find((obj) => obj[property] === value);
+    }
+}
+let store1 = new Store();
+store1.add({ name: "a", price: 1 });
+store1.find("name", "a");
+store1.find("price", 1);
 //# sourceMappingURL=index.js.map
