@@ -1,3 +1,5 @@
+import * as _ from "lodash";
+_.clone([1, 2, 3]);
 let sales: number = 123_456_789;
 let course: string = "TypeScript";
 let is_published: boolean = true;

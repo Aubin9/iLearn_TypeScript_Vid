@@ -89,3 +89,11 @@ we use this when we want to allow value of any types in .ts
 - Default exports
 - wildcard imports: import \* as Shapes from './shapes';
 - Re-exporting
+
+## Integration with JavaScript
+
+- include JS code in TS projects
+- Type checking JS code
+- JSDocs
+- Declaration (Type Definition)
+- Using declaration files from @types/
