@@ -72,3 +72,12 @@ we use this when we want to allow value of any types in .ts
 - Generic interfaces
 - Generic constraints
 - Type mapping
+
+## Decorators
+
+- What are decorators: attributes that we are applying to classes and their members, with this we can change how they behave
+- class decorators
+- Methods decorators
+- Property decorators
+- Accessor decorators
+- Parameter decorators

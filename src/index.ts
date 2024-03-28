@@ -451,3 +451,24 @@ type ReadOnly<T> = {
   //we can replace T by Project1
   readonly [K in keyof T]: T[K];
 };
+
+// decorators
+function Component(value: number) {
+  return (constructor: Function) => {
+    console.log("Component decorator called");
+    constructor.prototype.uniqueId = Date.now();
+    constructor.prototype.options = value;
+    constructor.prototype.insertInDOM = () => {
+      console.log("Inserting the component in the DOM");
+    };
+  };
+}
+
+function Pipe(constructor: Function) {
+  console.log("Pipe decorator called");
+  constructor.prototype.pipe = true;
+}
+
+@Component(1)
+@Pipe
+class ProfileComponent {}
