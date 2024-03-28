@@ -97,3 +97,10 @@ we use this when we want to allow value of any types in .ts
 - JSDocs
 - Declaration (Type Definition)
 - Using declaration files from @types/
+
+## React with TypeScript
+
+- npx create-react-app reminders-app --template typescript
+- npm i bootstrap
+- https://www.jsonplaceholder.typicode.com : calling the backend: post, comment, photos, etc.
+- npm i axios (for backend)
