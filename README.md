@@ -81,3 +81,11 @@ we use this when we want to allow value of any types in .ts
 - Property decorators
 - Accessor decorators
 - Parameter decorators
+
+## Modules
+
+- Create and use modules
+- Module formats
+- Default exports
+- wildcard imports: import \* as Shapes from './shapes';
+- Re-exporting

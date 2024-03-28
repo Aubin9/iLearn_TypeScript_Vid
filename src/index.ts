@@ -453,7 +453,7 @@ type ReadOnly<T> = {
 };
 
 // decorators
-function Component(value: number) {
+/*function Component(value: number) {
   return (constructor: Function) => {
     console.log("Component decorator called");
     constructor.prototype.uniqueId = Date.now();
@@ -472,3 +472,11 @@ function Pipe(constructor: Function) {
 @Component(1)
 @Pipe
 class ProfileComponent {}
+ProfileComponent;*/
+
+// Modules
+import { Circle1 as MyCircle, Square1 } from "./shapes";
+let circle = new MyCircle(1);
+console.log(circle.radius);
+let square = new Square1(2);
+console.log(square.width);
